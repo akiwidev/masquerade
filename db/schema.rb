@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_08_14_041213) do
   end
 
   create_table "masks", force: :cascade do |t|
-    t.string "type"
+    t.string "mask_type"
     t.string "info"
     t.string "photo_url"
     t.datetime "created_at", precision: 6, null: false
