@@ -1,10 +1,15 @@
 <body style="background-color: #1A1423";>
-  <div class="container mt-3">
-    <h1 class="poiret-font lavender-color border-bottom border-primary mb-3">Events</h1>
+  <nav class="navbar navbar-light bg-primary mb-3">
+    <%= link_to((root_path), class: "text-decoration-none purple-font") do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </nav>
+  <div class="container">
+    <h1 class="poiret-font lavender-font border-bottom border-primary py-2">Events</h1>
     <div class="cards">
       <% @events.each do |event| %>
         <%= link_to(event_path(event), class: "text-decoration-none") do %>
-          <div class="card-category lato-font" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('event.jpg')%>)">
+          <div class="card-category lato-font my-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('event.jpg')%>)">
             <%= event.name %>
           </div>
         <% end %>
