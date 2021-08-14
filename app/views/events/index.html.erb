@@ -1,0 +1,14 @@
+<body style="background-color: #1A1423";>
+  <div class="container mt-3">
+    <h1 class="poiret-font lavender-color border-bottom border-primary mb-3">Events</h1>
+    <div class="cards">
+      <% @events.each do |event| %>
+        <%= link_to(event_path(event), class: "text-decoration-none") do %>
+          <div class="card-category lato-font" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('event.jpg')%>)">
+            <%= event.name %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</body>

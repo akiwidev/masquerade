@@ -1,11 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-puts "Creating masks"
+require 'faker'
+
+puts "Creating masks..."
 
 Mask.create(mask_type: "Columbina", info: "Popularised by a recurring character in the commedia dell’arte by the same name (also known as Columbine or Columbina), the Columbina is traditionally a half mask adorned with an ornate variety of Jewels, feathers and fabrics. Often painted in gold or silver, it was held in place by either a ribbon or a stick.", photo_url: "app/assets/images/columbina.jpeg" )
 Mask.create(mask_type: "Volto Full Face", info: "Meaning ‘ghost’ and ‘face’ respectively, this was a white mask of fine wax cloth with a protruding topology that gave it a three-dimensional, beaklike appearance when viewed from the side. It was therefore more comfortable to wear than other varieties, and its simple design usually accompanied by a three-cornered hat and cloak so as to increase the aura of mystery, made it a very common feature of the Carnival over the centuries.", photo_url: "app/assets/images/volto full face.jpeg")
@@ -18,3 +13,14 @@ Mask.create(mask_type: "Pierrot", info: "Pierrot is a naïve, lunatic clown, una
 Mask.create(mask_type: "Gatto", info: "Meaning ‘cat’ in Italian, the Gatto is unsurprisingly shaped like the face of a cat, with the characteristic pointy ears, narrow eyes and button nose. Perhaps more surprising is that it owes its genesis to the scarcity of cats in Venice during the days of the Republic, indicating that felines were prized above other species of domestic animal on account of their rarity.", photo_url: "app/assets/images/gatto.jpeg")
 
 puts "Created #{Mask.count} masks"
+
+puts "Creating some events..."
+event_types = ["ball", "high tea", "party", "prom", "parade", "festival", "seminar", "trade show", "masterclass"]
+10.times do
+  Event.create!(
+    name: Faker::App.name,
+    event_type: event_types.sample,
+    max_attendees: rand(10..650)
+  )
+end
+puts "Created #{Event.count} events"
