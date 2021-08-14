@@ -1,8 +1,9 @@
-<body style="background-color: #1A1423";>
+<body style="background-color: #1A1423">
   <nav class="navbar navbar-light bg-primary mb-3">
     <%= link_to((root_path), class: "text-decoration-none purple-font") do %>
       <i class="fas fa-arrow-left"></i>
     <% end %>
+    <%= link_to "New event", new_event_path, class: "text-decoration-none purple-font" %>
   </nav>
   <div class="container">
     <h1 class="poiret-font lavender-font border-bottom border-primary py-2">Events</h1>

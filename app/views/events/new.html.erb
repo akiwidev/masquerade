@@ -1,0 +1,14 @@
+<body style="background-color: #1A1423">
+  <nav class="navbar navbar-light bg-primary mb-3">
+    <%= link_to((events_path), class: "text-decoration-none purple-font") do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </nav>
+  <div class="container lavender-font">
+    <%= simple_form_for @event do |f| %>
+      <%= f.input :name %>
+      <%= f.input :event_type %>
+      <%= f.submit "Create", class: "btn btn-outline-primary my-3" %>
+    <% end %>
+  </div>
+</body>
