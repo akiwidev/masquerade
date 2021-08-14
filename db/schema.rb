@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_08_14_041213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.integer "max_attendees"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "guests", force: :cascade do |t|
+    t.string "name"
+    t.bigint "mask_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_guests_on_event_id"
+    t.index ["mask_id"], name: "index_guests_on_mask_id"
+  end
+
+  create_table "masks", force: :cascade do |t|
+    t.string "type"
+    t.string "info"
+    t.string "photo_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "guests", "events"
+  add_foreign_key "guests", "masks"
 end
