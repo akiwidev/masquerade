@@ -1,14 +1,17 @@
-<body style="background-color: #1A1423">
-  <nav class="navbar navbar-light bg-primary mb-3">
+<body style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('event.jpg') %>); background-size: cover">
+  <nav class="navbar navbar-light bg-primary">
     <%= link_to((events_path), class: "text-decoration-none purple-font") do %>
       <i class="fas fa-arrow-left"></i>
     <% end %>
   </nav>
-  <div class="container lavender-font">
-    <%= simple_form_for @event do |f| %>
-      <%= f.input :name %>
-      <%= f.input :event_type %>
-      <%= f.submit "Create", class: "btn btn-outline-primary my-3" %>
-    <% end %>
+  <div class="banner">
+    <div class="container lavender-font">
+      <%= simple_form_for @event do |f| %>
+        <%= f.input :name %>
+        <%= f.input :event_type %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Create", class: "btn btn-outline-primary my-3" %>
+      <% end %>
+    </div>
   </div>
 </body>

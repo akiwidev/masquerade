@@ -16,11 +16,14 @@ puts "Created #{Mask.count} masks"
 
 puts "Creating some events..."
 event_types = ["ball", "high tea", "party", "prom", "parade", "festival", "seminar", "trade show", "masterclass"]
-10.times do
+event_names = ["2021 Venice Mardi Gras", "Nexus Yay!", "Fraser High School Ball", "Utopia 4000", "Mothers & Masks", "Priscilla's Party"]
+6.times do
+  event = event_names.last
   Event.create!(
-    name: Faker::App.name,
+    name: event,
     event_type: event_types.sample,
     max_attendees: rand(10..650)
   )
+  event_names.delete(event_names.last)
 end
 puts "Created #{Event.count} events"
