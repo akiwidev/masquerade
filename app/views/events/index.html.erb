@@ -7,13 +7,17 @@
   </nav>
   <div class="container">
     <h1 class="poiret-font lavender-font border-bottom border-primary py-2">Events</h1>
-    <div class="cards">
+    <div class="record_wrap">
       <% @events.each do |event| %>
-        <%= link_to(event_path(event), class: "text-decoration-none") do %>
-          <div class="card-category lato-font my-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('event.jpg')%>)">
-            <%= event.name %>
+        <section class="record">
+          <div id="record1" class="record-display">
           </div>
-        <% end %>
+          <div class="record-desc">
+            <h1><%= event.name %></h1>
+            <p><%= event.event_type %></p>
+            <%= link_to "More info", event_path(event), class: "text-decoration-none" %>
+          </div>
+        </section>
       <% end %>
     </div>
   </div>
