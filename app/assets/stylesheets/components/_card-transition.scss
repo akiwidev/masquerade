@@ -18,7 +18,7 @@
   top:0;
   background-image: url("mardi-gras.jpg");
   background-size: cover;
-  background-position: 50% 20%;
+  background-position: 40% 20%;
 }
 .record:hover .record-display {
   height:20%;
@@ -26,8 +26,4 @@
 
 #record1 {
   transition:height 700ms cubic-bezier(0.54, 0.21, 0.18, 1.35);
-}
-
-.record:hover .record-desc {
-  opacity:1;
 }

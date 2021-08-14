@@ -9,14 +9,15 @@
     <h1 class="poiret-font lavender-font border-bottom border-primary py-2 mb-3">Events</h1>
     <div class="cards">
       <% @events.each do |event| %>
-        <div class="card-category record purple-font">
-          <div class="record">
-            <div id="record1" class="record-display"></div>
-            <h1><%= event.name %></h1>
-            <p><%= event.event_type %></p>
-            <%= link_to "More info", event_path(event), class: "text-decoration-none purple-font" %>
+        <%= link_to(event_path(event), class: "text-decoration-none") do %>
+          <div class="card-category record purple-font">
+            <div class="record">
+              <div id="record1" class="record-display"></div>
+              <h1><%= event.name %></h1>
+              <p><%= event.event_type %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
