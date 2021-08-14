@@ -15,15 +15,12 @@ Mask.create(mask_type: "Gatto", info: "Meaning ‘cat’ in Italian, the Gatto i
 puts "Created #{Mask.count} masks"
 
 puts "Creating some events..."
-event_types = ["ball", "high tea", "party", "prom", "parade", "festival", "seminar", "trade show", "masterclass"]
-event_names = ["2021 Venice Mardi Gras", "Nexus Yay!", "Fraser High School Ball", "Utopia 4000", "Mothers & Masks", "Priscilla's Party"]
-6.times do
-  event = event_names.last
-  Event.create!(
-    name: event,
-    event_type: event_types.sample,
-    max_attendees: rand(10..650)
-  )
-  event_names.delete(event_names.last)
-end
+
+Event.create(name: "Venice Mardi Gras", event_type: "carnival", description: "Annual festival held in Venice, Italy. The carnival ends on Shrove Tuesday (Martedì Grasso or Mardi Gras), which is the day before the start of Lent on Ash Wednesday.", image_url: "mardi-gras2.jpg", max_attendees: 2500)
+Event.create(name: "Fraser High School Ball", event_type: "ball", description: "Annual school ball. Theme is mask magic. Teachers will also be in attendance.", image_url:"ball.jpg", max_attendees: 250)
+Event.create(name: "Motorbikes & Masks", event_type: "parade", description: "Dangeous. I don't know why they're having an event like this.", image_url:"motorbike.jpg", max_attendees: 450)
+Event.create(name: "Priscilla's Party", event_type: "birthday party", description: "Priscilla is turning 60, and her daughters are throwing her a surpise masquerade party.", image_url:"nana.jpg", max_attendees: 45)
+Event.create(name: "Utopia 4000", event_type: "masterclass", description: "A famous mask maker from Italy will be sharing his thoughts on AI, and it's impact on the industry.", image_url:"masterclass.jpg", max_attendees: 65)
+Event.create(name: "Nana's High Tea", event_type: "high tea", description: "Nana Brown is turning 96. A family get-together at a fancy restaurant.", image_url:"high-tea.jpg", max_attendees: 25)
+
 puts "Created #{Event.count} events"

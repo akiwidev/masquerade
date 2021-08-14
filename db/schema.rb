@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_14_041213) do
     t.string "name"
     t.string "event_type"
     t.string "description"
+    t.string "image_url"
     t.integer "max_attendees"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

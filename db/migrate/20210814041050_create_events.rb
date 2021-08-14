@@ -4,6 +4,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :event_type
       t.string :description
+      t.string :image_url
       t.integer :max_attendees
 
       t.timestamps
