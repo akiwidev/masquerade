@@ -6,12 +6,15 @@
   </nav>
   <div class="banner">
     <div class="container lavender-font">
-      <%= simple_form_for @event do |f| %>
-        <%= f.input :name %>
-        <%= f.input :event_type %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit "Create", class: "btn btn-outline-primary my-3" %>
-      <% end %>
+      <h1 class="poiret-font mb-5 ">New Event</h1>
+      <div class="lato-font">
+        <%= simple_form_for @event do |f| %>
+          <%= f.input :name %>
+          <%= f.input :event_type %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit "Create", class: "btn btn-outline-primary my-3" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </body>

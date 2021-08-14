@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  resources :events
+  resources :events do
+    resources :guests, only: [:index, :new, :create]
+  end
+  resources :guests, only: [:destroy]
   get "/masks", to: "masks#index", as: :masks
 end
