@@ -11,10 +11,11 @@
       <% @events.each do |event| %>
         <%= link_to(event_path(event), class: "text-decoration-none") do %>
           <div class="card-category record purple-font">
-            <div style="background-image: url(<%= image_path(event.image_url) %>); background-size: cover" class="record">
+            <div style="background-image: url(<%= image_path(event.image_url) %>); background-size: cover; background-position: center;" class="record">
               <div id="record1" class="record-display"></div>
-              <h2><%= event.name %></h2>
-              <p><%= event.event_type %></p>
+              <div class="record">
+                <h2 class="py-1 text-center"><%= event.name %></h2>
+              </div>
             </div>
           </div>
         <% end %>
