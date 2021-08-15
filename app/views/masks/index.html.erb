@@ -5,13 +5,15 @@
     <% end %>
   </nav>
   <div class="container">
-    <div class="card-deck">
+    <div class="row">
       <% @masks.each do |mask| %>
-        <div class="card" style="background-color: #f9f7ff">
-          <%= image_tag mask.photo_url, class: "card-img-top" %>
-          <div class="card-body">
-            <h5 class="card-title poiret-font"><%= mask.mask_type %></h5>
-            <p class="card-text lato-font text-justify"><%= mask.info %></p>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-2">
+          <div class="card" style="background-color: #f9f7ff">
+            <%= image_tag mask.photo_url, style: "object-fit: fit; height: 50%", class: "card-img-top" %>
+            <div class="card-body">
+              <h5 class="card-title poiret-font"><%= mask.mask_type %></h5>
+              <p class="card-text lato-font text-justify"><%= mask.info %></p>
+            </div>
           </div>
         </div>
       <% end %>
