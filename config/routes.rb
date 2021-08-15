@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
   resources :guests, only: [:destroy]
   get "/masks", to: "masks#index", as: :masks
-  get "/mask", to: "masks#show/:id", as: :mask
+  get "/mask/:id", to: "masks#show", as: :mask
 end
