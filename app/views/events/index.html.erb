@@ -1,5 +1,5 @@
 <body style="background-color: #1A1423">
-  <nav class="navbar navbar-light bg-primary mb-3">
+  <nav class="navbar navbar-light lato-font-nav bg-primary mb-3 py-3">
     <%= link_to((root_path), class: "text-decoration-none purple-font") do %>
       <i class="fas fa-arrow-left"></i>
     <% end %>
@@ -14,7 +14,7 @@
             <div style="background-image: url(<%= image_path(event.image_url) %>); background-size: cover; background-position: center;" class="record">
               <div id="record1" class="record-display"></div>
               <div class="record">
-                <h2 class="py-1 text-center"><%= event.name %></h2>
+                <h2 class="py-1 mt-2 text-center"><%= event.name %></h2>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 <body style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('event.jpg') %>); background-size: cover">
-  <nav class="navbar navbar-light bg-primary">
+  <nav class="navbar navbar-light bg-primary lato-font-nav py-3">
     <%= link_to((events_path), class: "text-decoration-none purple-font") do %>
       <i class="fas fa-arrow-left"></i>
     <% end %>
@@ -11,6 +11,7 @@
         <%= simple_form_for @event do |f| %>
           <%= f.input :name %>
           <%= f.input :event_type %>
+          <%= f.input :description %>
           <%= f.input :photo, as: :file %>
           <%= f.submit "Create", class: "btn btn-outline-primary my-3" %>
         <% end %>
